@@ -4,3 +4,4 @@
 
 #rotate triangle:triangular
 #draw cude:cude
+#shader highLightDiffuseCude:cude
