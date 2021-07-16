@@ -16,7 +16,7 @@ VSHADER_SOURCE =
 
 FSHADER_SOURCE =
     'void main() {\n' +
-    '  gl_FragColor = vec4(1.0, 0.0, 1.0, 1.0);\n' +//颜色渲染
+    '  gl_FragColor = vec4(0.0, 1.0, 0.0, 1.0);\n' +//颜色渲染
     '}\n';
 
 var vertexShader, fragmentShader
@@ -135,10 +135,10 @@ function initArrayBuffer(gl, data, num, type, attribute) {
     return true;
 }
 
-function normalizeVector (vector) {
-    var len = Math.sqrt(vector[0]**2 + vector[1]**2 + vector[2]**2)
-    return [vector[0] / len, vector[1] / len, vector[2] / len]
-}
+// function normalizeVector (vector) {
+//     var len = Math.sqrt(vector[0]**2 + vector[1]**2 + vector[2]**2)
+//     return [vector[0] / len, vector[1] / len, vector[2] / len]
+// }
   
 
 // write the positions of vertices to a vertex shader
