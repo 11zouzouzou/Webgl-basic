@@ -20,7 +20,7 @@ jobs:
     - uses: srt32/git-actions@v0.0.3
         with:
           args: git submodule update --init --recursive
-    # 使用 node:10
+    # 使用 node
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
