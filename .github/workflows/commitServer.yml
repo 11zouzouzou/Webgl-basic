@@ -25,21 +25,21 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
-    # npm install
-      - name: npm and yarn install
-        run: |
-          npm install -g yarn
-          yarn install
-        env:
-          CI: true
+  # npm install
+    - name: npm and yarn install
+      run: |
+        npm install -g yarn
+        yarn install
+      env:
+        CI: true
     # Deploy
-      - name: Deploy
-        uses: easingthemes/ssh-deploy@v2.0.7
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.ACCESS_TOKEN }}
-          ARGS: "-avz --delete"
-          SOURCE: "/"
-          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
-          REMOTE_USER: ${{ secrets.REMOTE_USER }}
-          TARGET: ${{ secrets.TARGET }}
+    - name: Deploy
+      uses: easingthemes/ssh-deploy@v2.0.7
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.ACCESS_TOKEN }}
+        ARGS: "-avz --delete"
+        SOURCE: "/"
+        REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+        REMOTE_USER: ${{ secrets.REMOTE_USER }}
+        TARGET: ${{ secrets.TARGET }}
     
