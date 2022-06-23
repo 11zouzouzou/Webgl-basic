@@ -12,6 +12,11 @@ jobs:
         node-version: [12.x]
     
     steps:
+    - name: Work around permission issue #https://github.blog/2022-04-12-git-security-vulnerability-announced/
+      run: |
+        git config --global --add safe.directory ${{ github.workspace }}
+        git config --global --add safe.directory /github/workspace
+        git config --global --add safe.directory /home
     # 切换分支
     - name: Checkout
       uses: actions/checkout@master
